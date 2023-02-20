@@ -3,7 +3,9 @@ let intervalId;
 
 function checkBirthday() {
   const now = new Date();
+  //alterado para pegar a data atual 
   const diffInMs = new Date(birthday) - now;
+  //Math.ceil para arredondar o dia 
   const diffInDays = Math.ceil(diffInMs / (1000 * 60 * 60 * 24));
   
   if (diffInDays === 0) {
@@ -30,10 +32,10 @@ process.stdin.setEncoding('utf8');
 process.stdin.on('data', function (data) {
   // Verifica se o valor digitado é igual a 0
   if (data.trim() === '0') {
-    // Se for igual, chama a função stopChecking para interromper a verificação
+    // Se for igual, chama a função stopChecking e interrompe a verificação
     stopChecking();
     console.log('Verificação interrompida.');
-    // Encerra o processo
+    // Encerra o processos
     process.exit();
   }
 });
